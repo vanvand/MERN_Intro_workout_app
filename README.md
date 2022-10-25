@@ -37,3 +37,8 @@ and require created routes in server.js
 create MongoDb project and database, get connection url for application and put in .env file
 $ npm i mongoose
 add connection config to server.js
+
+## 4- Models & Schemas
+
+create models/WorkoutModel.js with workoutSchema
+create handler function for route: POST a new workout
