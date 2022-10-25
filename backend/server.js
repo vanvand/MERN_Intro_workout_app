@@ -1,23 +1,33 @@
 require ("dotenv").config()
 
 const express = require("express")
+const mongoose = require("mongoose")
+const workoutRoutes = require("./routes/workouts")
 
 // express app
 const app = express()
 
-// global middleware to log path and method
-// middleware = any code that executes between us getting a request on the server and us sending a response
+// app.use() add a new middleware to the app > whenever request hits backend, express will execute functions passed to app.use() in order. 
+// express.json() parses incoming JSON requests and puts the parsed data in req.body.
+app.use(express.json())
+// global middleware to log path and HTTP method
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
 })
 
 // routes
-app.get("/", (req, res) => {
-    res.json({mssg: "Welcome to the app"})
-})
+app.use("/api/workouts", workoutRoutes)
 
-// listen for requests
-app.listen(process.env.PORT, () => {
-    console.log(`listening on port ${process.env.PORT}`)
-})
+// connect to db
+mongoose.connect(process.env.MONGO_URI)
+    .then( () => {
+        // listen for requests
+        app.listen(process.env.PORT, () => {
+            console.log(`connected to db & listening on port ${process.env.PORT}`)
+        })
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+
