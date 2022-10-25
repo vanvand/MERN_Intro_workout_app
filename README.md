@@ -42,3 +42,8 @@ add connection config to server.js
 
 create models/WorkoutModel.js with workoutSchema
 create handler function for route: POST a new workout
+
+## 5- Controllers
+
+create backend/controllers/workoutController.js
+import in workoutsRoutes.js
