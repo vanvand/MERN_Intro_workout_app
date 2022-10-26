@@ -63,4 +63,7 @@ bring in App.js
 fetch BE data in Home.js with JS fetch API
 ! user CORS instead of proxy (proxy constantly make problems)
 
+## 8- Form to create new workout
+
+create WorkoutForm component
 
