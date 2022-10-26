@@ -85,4 +85,10 @@ dispatch "CREATE_WORKOUT" action in WorkoutForm.js
 ## 10- Delete Data
 
 extend WorkoutDetails.js with delete button and onClick function
-add DELETE_WORKOUT contect type
+add DELETE_WORKOUT context type
+
+## 11- Handling Error Responses
+
+add conditions in workoutController
+add emptyFields state and give styling for dynamically created classNames
+
