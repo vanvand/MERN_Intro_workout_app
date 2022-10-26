@@ -82,3 +82,7 @@ create hooks/useWorkoutContext.js to create custom hook
 use global context instead of local state in Home.js and dispatch "SET_WORKOUTS" action
 dispatch "CREATE_WORKOUT" action in WorkoutForm.js
 
+## 10- Delete Data
+
+extend WorkoutDetails.js with delete button and onClick function
+add DELETE_WORKOUT contect type
