@@ -67,3 +67,18 @@ fetch BE data in Home.js with JS fetch API
 
 create WorkoutForm component
 
+## 9- React Context
+
+keep local workout state in sync with the database, e.g. after adding new workout
+    options:
+    > force re-fetch
+    > update state locally via React Content (global state > update state by dispatch actions)
+
+create context/WorkoutContext.js
+and wrap App component in index.js with WorkoutsContextProvider component
+
+create hooks/useWorkoutContext.js to create custom hook
+
+use global context instead of local state in Home.js and dispatch "SET_WORKOUTS" action
+dispatch "CREATE_WORKOUT" action in WorkoutForm.js
+

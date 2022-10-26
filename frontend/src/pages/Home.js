@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react"
 import WorkoutDetails from "../components/WorkoutDetails"
 import WorkoutForm from "../components/WorkoutForm"
+import { useWorkoutsContext } from "../hooks/useWorkoutContext"
 
 const Home = () => {
 
-    const [workouts, setWorkouts] = useState(null)
+    // use global context instead of local state
+    const { workouts, dispatch } = useWorkoutsContext()
+    // const [workouts, setWorkouts] = useState(null)
 
     useEffect(() => {
         const fetchWorkouts = async () => {
@@ -12,11 +15,12 @@ const Home = () => {
             const json = await response.json() 
 
             if(response.ok) {
-                setWorkouts(json) // array of workout objects
+                dispatch({type: "SET_WORKOUTS", payload: json})
+                // setWorkouts(json)
             }
         }
         fetchWorkouts()
-    }, [workouts] // fire it only once when component first renders
+    }, [] // fire it only once when component first renders
     )
 
     return (
