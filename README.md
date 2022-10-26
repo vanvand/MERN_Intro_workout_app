@@ -47,3 +47,20 @@ create handler function for route: POST a new workout
 
 create backend/controllers/workoutController.js
 import in workoutsRoutes.js
+
+## 6- React Ap
+
+$ npx create-react-app frontend
+cd frontend
+npm i react-router-dom
+
+create pages/Home.js
+create components/Navbar.js
+bring in App.js
+
+## 7- Fetching Data & list workouts
+
+fetch BE data in Home.js with JS fetch API
+! user CORS instead of proxy (proxy constantly make problems)
+
+
